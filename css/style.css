@@ -1,2 +1,131 @@
 @import "reset.css";
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root {
+  --cl-very-dark-blue: hsl(233, 47%, 7%);
+  --cl-dark-desaturated-blue: hsl(244, 38%, 16%);
+  --cl-soft-violet: hsl(277, 64%, 61%);
+  --cl-white: hsl(0, 0%, 100%);
+  --cl-white-main-paragraph: hsla(0, 0%, 100%, 0.75);
+  --cl-white-stat-headings: hsla(0, 0%, 100%, 0.6);
+
+  --fs-default: 15px;
+
+  font: 400 var(--fs-default) Inter;
+}
+
+body {
+  background: var(--cl-very-dark-blue);
+  color: var(--cl-white);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card {
+  width: 90%;
+  max-width: 1024px;
+  margin: 2rem auto;
+  background: var(--cl-dark-desaturated-blue);
+  border-radius: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.desc {
+  margin: 2rem 1rem;
+}
+
+.main-paragraph {
+  color: var(--cl-white-main-paragraph);
+  line-height: 2rem;
+  margin: 2rem 0;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat {
+  margin: 2rem 0;
+}
+
+.stat-name {
+  color: var(--cl-white-stat-headings);
+  text-transform: uppercase;
+  font-family: 'Lexend Deca';
+}
+
+.stat-num {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--cl-soft-violet);
+}
+
+.cover {
+  position: relative;
+}
+
+.img-color {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--cl-soft-violet);
+  opacity: 75%;
+  width: 100%;
+  height: 100%;
+}
+
+.show-desktop {
+  display: none;
+}
+
+@media all and (min-width: 1024px) {
+  body {
+    text-align: left;
+  }
+
+  .card {
+    flex-direction: row;
+  }
+
+  .cover {
+    order: 1;
+  }
+
+  .stats {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .desc {
+    margin: 5rem;
+  }
+
+  .show-desktop {
+    display: inline;
+  }
+
+  .show-mobile {
+    display: none;
+  }
+
+  .column {
+    flex: 1;
+  }
+}
